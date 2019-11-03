@@ -7,13 +7,13 @@
   </p>
 
   <p>
-    <%= f.label :type %><br>
-    <%= select_tag "event type", raw("<option>Workshop</option><option>Office Hours</option>") %>
+    <%= f.label :event_type %><br>
+    <%= f.select :event_type, ['Workshop', 'Office Hours']%>
   </p>
 
   <p>
     <%= f.label :speaker %><br>
-    <%= select_tag "speaker", options_from_collection_for_select(@users, "id", "name") %>
+    <%= select_tag "speaker", options_from_collection_for_select(@users, "name", "name") %>
   </p>
 
   <p>
@@ -25,6 +25,11 @@
     <%= f.label :date %><br>
     <%= date_select("event", "date") %>
   </p>
+
+  <p>
+    <%= f.label :duration %><br>
+    <%= f.number_field :duration %>
+  </p>
  
   <p>
     <%= f.label :description %><br>
@@ -33,7 +38,7 @@
 
   <p>
     <%= f.label :max_participants %><br>
-    <%= f.text_field :max_participants %>
+    <%= f.number_field :max_participants %>
   </p>
  
   <p>
