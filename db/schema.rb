@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_03_193702) do
+ActiveRecord::Schema.define(version: 2019_11_03_203644) do
 
   create_table "events", force: :cascade do |t|
     t.string "name"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2019_11_03_193702) do
     t.integer "max_participants"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   create_table "events_users", id: false, force: :cascade do |t|

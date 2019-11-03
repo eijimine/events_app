@@ -28,7 +28,10 @@
 
   <p>
     <%= f.label :duration %><br>
-    <%= f.number_field :duration %>
+    <%= f.label :start_time %><br>
+    <%= time_select("event", "start_time") %>
+    <%= f.label :end_time %><br>
+    <%= time_select("event", "end_time") %>
   </p>
  
   <p>

@@ -1,4 +1,9 @@
 class EventsController < ApplicationController
+
+  def index
+    @events = Event.all.limit(5)
+  end
+
   def new
     @users = User.all
   end
@@ -17,7 +22,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:id, :name, :event_type, :date, :duration, :location, :description, :max_participants)
+    params.require(:event).permit(:id, :name, :event_type, :date, :duration, :location, :description, :max_participants, :start_time, :end_time)
   end
 
 end
