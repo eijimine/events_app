@@ -1,12 +1,25 @@
 <h1>Here are your event details</h1>
-<div><%= @event.name %></div>
-<div><%= @event.event_type %></div>
-<div><%= @event.users.first.try(:name) %></div>
-<div><%= @event.location %></div>
-<div><%= @event.date %></div>
-<div><%= @event.duration %></div>
-<div><%= @event.description %></div>
-<div><%= @event.max_participants %></div>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Location</th>
+    <th>Speaker</th>
+    <th>Date</th>
+    <th>Description</th>
+    <th>Max Particitpants</th>
+  </tr>
+  <tr>
+    <td><%= @event.name %></td>
+    <td><%= @event.event_type %></td>
+    <td><%= @event.location %></td>
+    <td><%= @event.users.first.try(:name) %></td>
+    <td><%= @event.date %></td>
+    <td><%= @event.description %></td>
+    <td><%= @event.max_participants %></td>
+  </tr>
+</table>
 <br />
 <%= link_to 'Index', events_path %>
 

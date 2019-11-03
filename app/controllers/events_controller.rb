@@ -1,7 +1,14 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all.limit(5)
+    if params[:name]
+      @events = Event.where('name LIKE ?', "%#{params[:name]}%")
+    elsif params[:search]
+      @search = EventSearch.new(params[:search])
+      @events = @search.scope
+    else
+      @events = Event.all
+    end
   end
 
   def new
@@ -9,7 +16,6 @@ class EventsController < ApplicationController
   end
 
   def create
-    puts params.inspect
     @event = Event.new(event_params) 
     @event.save
     redirect_to @event
@@ -22,7 +28,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:id, :name, :event_type, :date, :duration, :location, :description, :max_participants, :start_time, :end_time)
+    params.require(:event).permit(:id, :name, :event_type, :date, :duration, :location, :description, :max_participants, :start_time, :end_time, :search)
   end
 
 end
