@@ -22,7 +22,7 @@
 
         <p>
           <%= f.label :speaker %><br>
-          <%= select_tag "speaker", options_from_collection_for_select(@users, "name", "name") %>
+          <%= select_tag "speaker", options_from_collection_for_select(@users, "id", "name") %>
         </p>
 
         <p>

@@ -16,7 +16,11 @@ class EventsController < ApplicationController
   end
 
   def create
+    puts params
     @event = Event.new(event_params) 
+    if params[:speaker]
+      @event.users << User.find_by(id: params[:speaker])
+    end
     @event.save
     redirect_to @event
   end

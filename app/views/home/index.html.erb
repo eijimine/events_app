@@ -4,9 +4,8 @@
   <div class="col-sm-2"></div>
     <div class="col-sm-8">
       <h1>Welcome to the event creation app</h1>
+      <p>Please run `rake db:seed` from the console in order to seed sample users</p>
+      <p>You may now view or create events from <%= link_to 'Here', events_path %></p>
     </div>
   <div class="col-sm-2"></div>
 </div>
-
-<%= link_to 'sign up', signup_path %>
-<%= link_to 'login', login_path %>
