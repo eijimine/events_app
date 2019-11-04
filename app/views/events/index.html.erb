@@ -7,21 +7,20 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-6">
-  </div>
-  <div class="col-sm-6">
-    <%= form_tag(events_path, method: :get) do %>
-      Event Name <%= text_field_tag(:name, params[:name]) %>
-      <%= submit_tag 'Search', name: nil %>
-    <% end %>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10 text-right">
+      <%= form_tag(events_path, method: :get) do %>
+        Event Name <%= text_field_tag(:name, params[:name]) %>
+        <%= submit_tag 'Search', name: nil %>
+      <% end %>
     <br />
-
-    <%= form_tag(events_path, method: :get) do %>
-      From Date <%= text_field_tag('search[date_from]', @search.try(:date_from) || Date.today-1.year) %>
-      To <%= text_field_tag('search[date_to]', @search.try(:date_to) || Date.today.to_s) %>
-      <%= submit_tag 'Search', name: nil %>
-    <% end %>
+      <%= form_tag(events_path, method: :get) do %>
+        From Date <%= text_field_tag('search[date_from]', @search.try(:date_from) || Date.today-1.year) %>
+        To <%= text_field_tag('search[date_to]', @search.try(:date_to) || Date.today.to_s) %>
+        <%= submit_tag 'Search', name: nil %>
+      <% end %>
   </div>
+  <div class="col-sm-1"></div>
 </div>
 
 <br />
