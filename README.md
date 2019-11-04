@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Please run `rake db:seed` to see users.
 
-Things you may want to cover:
+Currently, the following features are functional:
 
-* Ruby version
+  - Creating new Event
+  - Viewing list of events
+  - Viewing single event
+  - Search by Event Name
+  - Search by date range
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
